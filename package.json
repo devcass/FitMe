@@ -12,7 +12,11 @@
     "check-types": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
     "test": "jest",
     "commit": "cz",
-    "clean": "rimraf .next .swc out coverage"
+    "clean": "rimraf .next .swc out coverage",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "config": {
     "commitizen": {
@@ -24,6 +28,7 @@
     "@types/react": "18.2.9",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "cypress": "^12.14.0",
     "eslint": "8.42.0",
     "eslint-config-next": "^13.4.4",
     "next": "13.4.4",
@@ -38,6 +43,7 @@
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@commitlint/cz-commitlint": "^17.5.0",
+    "@testing-library/cypress": "^9.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.2",
@@ -68,6 +74,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "start-server-and-test": "^2.0.0"
   }
 }
